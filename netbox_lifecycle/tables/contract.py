@@ -16,7 +16,7 @@ __all__ = (
 class VendorTable(NetBoxTable):
     name = tables.Column(
         linkify=True,
-        verbose_name=_('Name')
+        verbose_name='Name'
     )
 
     class Meta(NetBoxTable.Meta):
@@ -44,7 +44,7 @@ class SupportSKUTable(NetBoxTable):
 class SupportContractTable(NetBoxTable):
     contract_id = tables.Column(
         linkify=True,
-        verbose_name=_('Contract ID')
+        verbose_name='Contract ID'
     )
 
     class Meta(NetBoxTable.Meta):
@@ -59,52 +59,51 @@ class SupportContractTable(NetBoxTable):
 
 class SupportContractAssignmentTable(NetBoxTable):
     contract = tables.Column(
-        verbose_name=_('Contract'),
-        linkify=True,
+        linkify=True
     )
     sku = tables.Column(
-        verbose_name=_('SKU'),
+        verbose_name='SKU',
         linkify=True,
     )
     device_name = tables.Column(
-        verbose_name=_('Device Name'),
+        verbose_name='Device Name',
         accessor='device__name',
         linkify=False,
         orderable=True,
     )
     device_serial = tables.Column(
-        verbose_name=_('Serial Number'),
+        verbose_name='Serial Number',
         accessor='device__serial',
         orderable=True,
     )
     device_model = tables.Column(
-        verbose_name=_('Device Model'),
+        verbose_name='Device Model',
         accessor='device__device_type__model',
         linkify=False,
         orderable=True,
     )
     device_status = ChoiceFieldColumn(
-        verbose_name=_('Device Status'),
+        verbose_name='Device Status',
         accessor='device__status',
         orderable=True,
     )
     license_name = tables.Column(
-        verbose_name=_('License'),
+        verbose_name='License',
         accessor='license__license__name',
         linkify=False,
         orderable=True,
     )
     quantity = tables.Column(
-        verbose_name=_('License Quantity'),
+        verbose_name='License Quantity',
         accessor='license__quantity',
         orderable=False,
     )
     renewal = tables.Column(
-        verbose_name=_('Renewal Date'),
+        verbose_name='Renewal Date',
         accessor='contract__renewal',
     )
     end = tables.Column(
-        verbose_name=_('End Date'),
+        verbose_name='End Date',
         accessor='end_date',
         orderable=False,
     )

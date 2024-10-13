@@ -2,7 +2,6 @@
 {% load buttons %}
 {% load custom_links %}
 {% load helpers %}
-{% load filters %}
 {% load perms %}
 {% load plugins %}
 {% load tabs %}
@@ -35,23 +34,23 @@
           <table class="table table-hover attr-table">
             <tr>
               <td>End of Sale</td>
-              <td><span {{ object.end_of_sale|date_badge_class }}>{{ object.end_of_sale }}</span></td>
+              <td>{{ object.end_of_sale }}</td>
             </tr>
             <tr>
               <td>End of Maintenance Updates</td>
-              <td><span {{ object.end_of_maintenance|date_badge_class }}>{{ object.end_of_maintenance }}</span></td>
+              <td>{{ object.end_of_maintenance }}</td>
             </tr>
             <tr>
               <td>End of Security Updates</td>
-              <td><span {{ object.end_of_security|date_badge_class }}>{{ object.end_of_security }}</span></td>
+              <td>{{ object.end_of_security }}</td>
             </tr>
             <tr>
               <td>Last Support Contract Purchase Date</td>
-              <td><span {{ object.last_contract_date|date_badge_class }}>{{ object.last_contract_date }}</span></td>
+              <td>{{ object.last_contract_date }}</td>
             </tr>
             <tr>
               <td>End of Support</td>
-              <td><span {{ object.end_of_support|date_badge_class }}>{{ object.end_of_support }}</span></td>
+              <td>{{ object.end_of_support }}</td>
             </tr>
           </table>
         </div>

@@ -1,4 +1,3 @@
-from django.utils.translation import gettext as _
 import django_tables2 as tables
 
 from netbox.tables import NetBoxTable
@@ -13,17 +12,15 @@ __all__ = (
 class HardwareLifecycleTable(NetBoxTable):
     name = tables.Column(
         linkify=True,
-        accessor='name',
-        orderable=False,
+        accessor='name'
     )
+
     assigned_object = tables.Column(
         linkify=True,
-        verbose_name=_('Hardware'),
-        orderable=False,
+        verbose_name='Hardware'
     )
     assigned_object_count = tables.Column(
-        verbose_name=_('Assigned Object Count'),
-        orderable=False,
+        verbose_name='Assigned Object Count'
     )
 
     class Meta(NetBoxTable.Meta):
